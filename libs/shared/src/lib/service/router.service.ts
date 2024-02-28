@@ -46,15 +46,15 @@ class RouterService {
    *
    * @return Rotas
    */
-  public getRoute(url: string): string {
-    let rota: string = null;
-    for (const rotaEnum in RouterEnum) {
-      if (url.includes(RouterEnum[rotaEnum])) {
-        rota = rotaEnum === "ROOT" ? RouterEnum.ROOT : RouterEnum[rotaEnum];
-      };
-    }
-    return rota;
-  }
+  // public getRoute(url: string): string {
+  //   let rota: string = null;
+  //   for (const rotaEnum in RouterEnum) {
+  //     if (url.includes(RouterEnum[rotaEnum])) {
+  //       rota = rotaEnum === "ROOT" ? RouterEnum.ROOT : RouterEnum[rotaEnum];
+  //     };
+  //   }
+  //   return rota;
+  // }
 }
 
 export { RouterService };

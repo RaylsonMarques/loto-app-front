@@ -17,5 +17,5 @@ import {SsoAuthorityDirective} from './sso-authority.directive';
     CommonModule
   ]
 })
-export class BcpaDirectiveModule {
+export class LotoDirectiveModule {
 }

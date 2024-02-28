@@ -4,15 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TextMaskModule } from 'angular2-text-mask';
 
-import { BcpaDirectiveModule } from './directive/bcpa-directive.module';
+import { LotoDirectiveModule } from './directive/loto-directive.module';
 import { MATERIAL_IMPORTS } from './material-imports';
-import { BcpaPipeModule } from './pipes/bcpa-pipe.module';
-import { OrganizeTemplateComponent } from './template/loto-template.component';
+import { LotoPipeModule } from './pipes/loto-pipe.module';
+import { LotoTemplateComponent } from './template/loto-template.component';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-	declarations: [OrganizeTemplateComponent],
-	exports: [OrganizeTemplateComponent, MATERIAL_IMPORTS, BcpaDirectiveModule, BcpaPipeModule, ReactiveFormsModule],
+	declarations: [LotoTemplateComponent],
+	exports: [LotoTemplateComponent, MATERIAL_IMPORTS, LotoDirectiveModule, LotoPipeModule, ReactiveFormsModule],
 	imports: [
 		CommonModule,
 		MATERIAL_IMPORTS,

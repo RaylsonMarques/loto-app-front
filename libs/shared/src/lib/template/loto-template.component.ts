@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 	templateUrl: "./loto-template.component.html",
 	styleUrls: ["./loto-template.component.scss"],
 })
-export class OrganizeTemplateComponent implements OnInit {
+export class LotoTemplateComponent implements OnInit {
 
 	constructor(private readonly router: Router, private readonly activatedRoute: ActivatedRoute) {}
 

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MATERIAL_IMPORTS } from '@organize/shared';
+import { MATERIAL_IMPORTS } from '@loto/shared';
 import { TextMaskModule } from 'angular2-text-mask';
 
 import { CardComponent } from './card/card.component';

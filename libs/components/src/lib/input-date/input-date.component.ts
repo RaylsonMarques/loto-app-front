@@ -8,7 +8,7 @@ import * as moment from 'moment';
 
 import { BaseInput } from '../base/base-input';
 import { DATE_FORMAT } from './date-format';
-import { Utils } from '@organize/shared';
+import { Utils } from '@loto/shared';
 
 /**
  * Componente Date

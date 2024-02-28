@@ -11,4 +11,4 @@ import { TrimPipe } from './trim.pipe';
 	exports: [TrimPipe, JsonFilterPipe, IconSearchPipe],
 	imports: [CommonModule],
 })
-export class BcpaPipeModule {}
+export class LotoPipeModule {}

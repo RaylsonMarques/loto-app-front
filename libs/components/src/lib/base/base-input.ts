@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormHelper } from '@organize/shared';
+import { FormHelper } from '@loto/shared';
 
 import { ValidationMessageMap } from './validation-message';
 

@@ -5,7 +5,7 @@ import { MatPaginator, PageEvent } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTable, MatTableDataSource } from "@angular/material/table";
 
-import { Page, PageRequest } from "@organize/shared";
+import { Page, PageRequest } from "@loto/shared";
 import { SimpleDialogComponent } from "../dialog/simple-dialog.component";
 import { TabelaHeader, PayloadTabela, TabelaCustomButton } from './tabela-model';
 
