@@ -1,0 +1,28 @@
+<form [formGroup]="form" (submit)="submit()">
+	<h2>Preencha todos os campos abaixo</h2>
+	<p>Para acessar sua conta, preencha todos os campos abaixo e clique em confirmar.</p>
+	<div class="row">
+
+		<loto-input-cpf
+			[form]="form"
+			controlName="cpf"
+			label="CPF"
+			[value]="form.get('cpf').value"
+			placeholder="Digite apenas os números do seu CPF"
+			class="col-12 col-md-6 mb-2"
+		></loto-input-cpf>
+
+		<loto-input-password
+			[form]="form"
+			controlName="password"
+			label="Senha"
+			[value]="form.get('password').value"
+			class="col-12 col-md-6"
+		></loto-input-password>
+	</div>
+
+	<div class="d-flex flex-column-reverse justify-content-center flex-md-row justify-content-md-between mt-4">
+		<button mat-button color="accent" type="button" (click)="back()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="buttonDisabled()" class="mb-2">Confirmar</button>
+	</div>
+</form>
