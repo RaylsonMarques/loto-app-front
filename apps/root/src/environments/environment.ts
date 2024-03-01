@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+
+	API_HOST: 'http://localhost:4100/api/loto-app'
 };
 
 /*

@@ -26,9 +26,10 @@ import { BlockUIModule } from 'ng-block-ui';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { ToastrModule } from 'ngx-toastr';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, SignUpComponent],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,

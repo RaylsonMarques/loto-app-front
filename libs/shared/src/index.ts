@@ -19,6 +19,7 @@ import { RouterEnum } from './lib/enums/RouterEnum';
 import { NotificationService } from './lib/service/notification.service';
 import { RouterService } from './lib/service/router.service';
 import { IResponseHttpDTO } from './lib/model/IResponseHttpDTO';
+import { ScreenNameEnum } from './lib/enums/ScreenNameEnum';
 
 export * from './lib/shared.module';
 export {
@@ -27,6 +28,7 @@ export {
 	SsoAuthorityDirective,
 	//- Enums
 	RouterEnum,
+	ScreenNameEnum,
 	//- Helper
   FormHelper,
   HttpHelper,
