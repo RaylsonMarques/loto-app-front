@@ -8,6 +8,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { CardComponent } from './card/card.component';
 import { SimpleDialogComponent } from './dialog/simple-dialog.component';
 import { IconComponent } from './icon/icon.component';
+import { InputCpfComponent } from './input-cpf/input-cpf.component';
 import { InputDateComponent } from './input-date/input-date.component';
 import { InputNumberComponent } from './input-number/input-number.component';
 import { InputPasswordComponent } from './input-password/input-password.component';
@@ -19,15 +20,18 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TableComponent } from './table/table.component';
 import { VersionComponent } from './version/version.component';
+import { InputTelephoneComponent } from './input-telephone/input-telephone.component';
 
 @NgModule({
 	declarations: [
 		CardComponent,
 		SimpleDialogComponent,
+		InputCpfComponent,
 		InputDateComponent,
 		InputNumberComponent,
 		InputPasswordComponent,
 		InputTextComponent,
+		InputTelephoneComponent,
 		InputTimeComponent,
 		ListComponent,
 		NavbarComponent,
@@ -40,10 +44,12 @@ import { VersionComponent } from './version/version.component';
 	exports: [
 		CardComponent,
 		SimpleDialogComponent,
+		InputCpfComponent,
 		InputDateComponent,
 		InputNumberComponent,
 		InputPasswordComponent,
 		InputTextComponent,
+		InputTelephoneComponent,
 		InputTimeComponent,
 		ListComponent,
 		NavbarComponent,
