@@ -27,9 +27,10 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { ToastrModule } from 'ngx-toastr';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
-	declarations: [AppComponent, SignUpComponent],
+	declarations: [AppComponent, SignUpComponent, SignInComponent],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
