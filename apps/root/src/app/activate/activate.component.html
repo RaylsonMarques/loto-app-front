@@ -1,0 +1,46 @@
+<form [formGroup]="form" (submit)="submit()">
+	<h2>Preencha todos os campos abaixo</h2>
+	<p>Para criar uma nova conta, preencha todos os campos abaixo.</p>
+	<div class="row">
+		<loto-input-cpf
+			[form]="form"
+			controlName="cpf"
+			label="CPF"
+			[value]="form.get('cpf').value"
+			placeholder="Digite apenas os números do seu CPF"
+			class="col-12 col-md-6 col-lg-4 mb-2"
+		></loto-input-cpf>
+
+		<loto-input-password
+			[form]="form"
+			controlName="actual_password"
+			label="Digite sua senha provisória"
+			[value]="form.get('actual_password').value"
+			placeholder="Essa é a senha que enviamos para o seu WhatsApp"
+			class="col-12 col-md-6 mb-2"
+		></loto-input-password>
+
+		<loto-input-password
+			[form]="form"
+			controlName="new_password"
+			label="Digite sua nova senha"
+			[value]="form.get('new_password').value"
+			placeholder="Digite sua nova senha"
+			class="col-12 col-md-6 mb-2"
+		></loto-input-password>
+
+		<loto-input-password
+			[form]="form"
+			controlName="new_password_confirmation"
+			label="Confirme sua nova senha"
+			[value]="form.get('new_password_confirmation').value"
+			placeholder="Confirme sua nova senha"
+			class="col-12 col-md-6 mb-2"
+		></loto-input-password>
+	</div>
+
+	<div class="d-flex flex-column-reverse justify-content-center flex-md-row justify-content-md-between mt-4">
+		<button mat-button color="accent" type="button" (click)="back()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="buttonDisabled()" class="mb-2">Cadastrar</button>
+	</div>
+</form>

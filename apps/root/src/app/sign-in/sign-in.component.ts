@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IResponseHttpDTO, RouterEnum, Utils } from '@loto/shared';
+import { IResponseHttpDTO, NotificationService, RouterEnum, Utils } from '@loto/shared';
 
 import { IDoLoginDTO } from '../../core/model/interface/IDoLoginDTO';
 import { LoginService } from '../../core/service/Login.service';
@@ -17,6 +17,7 @@ export class SignInComponent implements OnInit {
 	constructor(
 		//- Service
 		private readonly loginService: LoginService,
+		private readonly notificationService: NotificationService,
 		//- Router
 		private readonly router: Router,
 		//- Util
@@ -36,10 +37,11 @@ export class SignInComponent implements OnInit {
 		const login: IDoLoginDTO = this.treatData();
 		this.loginService.login(login).subscribe({
 			next: (response: IResponseHttpDTO) => {
-				console.log('response: ', response);
+				this.notificationService.success(response.message);
+				this.router.navigate([RouterEnum.SIGN_IN]);
 			},
 			error: (error) => {
-				console.error("error: ", error);
+				this.notificationService.error(error.message);
 			}
 		});
 	}

@@ -9,6 +9,6 @@ module.exports = withModuleFederation({
    * e.g.
   */
   remotes: [
-    // ['proposta-cartao', 'http://localhost:4201'],
+    // ['dashboard', 'http://localhost:4201'],
   ]
 });

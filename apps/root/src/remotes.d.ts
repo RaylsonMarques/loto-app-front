@@ -1,1 +1,1 @@
-// declare module 'proposta-cartao/Module';
+// declare module 'dashboard/Module';

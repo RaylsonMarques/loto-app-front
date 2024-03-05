@@ -70,7 +70,7 @@ export class SignUpComponent implements OnInit {
 			cpf: [null, Validators.required],
 			birthdate: [null, Validators.required],
 			whatsapp: [null, Validators.required],
-			password: [null, Validators.required]
+			whatsapp_confirmation: [null, Validators.required]
 		});
 	}
 
@@ -82,7 +82,6 @@ export class SignUpComponent implements OnInit {
 			cpf: cpf.value,
 			birthdate: birthdate.value,
 			whatsApp: whatsapp.value,
-			password: password.value
 		}
 
 		return user;

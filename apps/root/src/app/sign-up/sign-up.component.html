@@ -39,14 +39,15 @@
 			class="col-12 col-md-6 mb-2"
 		></loto-input-telephone>
 
-		<loto-input-password
+		<loto-input-telephone
 			[form]="form"
-			controlName="password"
-			label="Senha"
-			[value]="form.get('password').value"
-			(keyup)="validatePassword($event)"
-			class="col-12 col-md-6"
-		></loto-input-password>
+			controlName="whatsapp"
+			label="Confirme seu WhatsApp"
+			[cellPhone]="true"
+			[value]="form.get('whatsapp_confirmation').value"
+			placeholder="Digite apenas os números do seu WhatsApp"
+			class="col-12 col-md-6 mb-2"
+		></loto-input-telephone>
 	</div>
 
 	<div class="d-flex flex-column-reverse justify-content-center flex-md-row justify-content-md-between mt-4">
