@@ -3,5 +3,4 @@ export interface ICreateUserDTO {
 	cpf: string;
 	birthdate: Date;
 	whatsApp: string;
-	password: string;
 }
