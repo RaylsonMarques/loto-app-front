@@ -7,12 +7,11 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { LotoDirectiveModule } from './directive/loto-directive.module';
 import { MATERIAL_IMPORTS } from './material-imports';
 import { LotoPipeModule } from './pipes/loto-pipe.module';
-import { LotoTemplateComponent } from './template/loto-template.component';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-	declarations: [LotoTemplateComponent],
-	exports: [LotoTemplateComponent, MATERIAL_IMPORTS, LotoDirectiveModule, LotoPipeModule, ReactiveFormsModule],
+	declarations: [],
+	exports: [MATERIAL_IMPORTS, LotoDirectiveModule, LotoPipeModule, ReactiveFormsModule],
 	imports: [
 		CommonModule,
 		MATERIAL_IMPORTS,

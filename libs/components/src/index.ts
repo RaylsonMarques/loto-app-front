@@ -14,11 +14,14 @@ import { SidebarComponent } from './lib/sidebar/sidebar.component';
 import { TableComponent } from './lib/table/table.component';
 import { VersionComponent } from './lib/version/version.component';
 import { InputTelephoneComponent } from './lib/input-telephone/input-telephone.component';
+import { LotoTemplateComponent } from './lib/template/loto-template.component';
+import { BreadcrumbComponent } from './lib/breadcrumb/breadcrumb.component';
 
 export * from './lib/components.module';
 
 export {
 	//- Components
+	BreadcrumbComponent,
 	CardComponent,
 	SimpleDialogComponent,
 	IconComponent,
@@ -35,4 +38,5 @@ export {
 	SidebarComponent,
 	TableComponent,
 	VersionComponent,
+	LotoTemplateComponent
 };

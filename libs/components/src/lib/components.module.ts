@@ -21,9 +21,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TableComponent } from './table/table.component';
 import { VersionComponent } from './version/version.component';
 import { InputTelephoneComponent } from './input-telephone/input-telephone.component';
+import { LotoTemplateComponent } from './template/loto-template.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
 	declarations: [
+		BreadcrumbComponent,
 		CardComponent,
 		SimpleDialogComponent,
 		InputCpfComponent,
@@ -40,8 +43,10 @@ import { InputTelephoneComponent } from './input-telephone/input-telephone.compo
 		TableComponent,
 		VersionComponent,
 		IconComponent,
+		LotoTemplateComponent
 	],
 	exports: [
+		BreadcrumbComponent,
 		CardComponent,
 		SimpleDialogComponent,
 		InputCpfComponent,
@@ -58,6 +63,7 @@ import { InputTelephoneComponent } from './input-telephone/input-telephone.compo
 		TableComponent,
 		VersionComponent,
 		IconComponent,
+		LotoTemplateComponent
 	],
 	imports: [CommonModule, MATERIAL_IMPORTS, RouterModule, ReactiveFormsModule, FormsModule, TextMaskModule],
 })
