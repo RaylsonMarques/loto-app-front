@@ -1,7 +1,8 @@
 import { Route } from '@angular/router';
-import { LotoTemplateComponent, RouterEnum, ScreenNameEnum } from '@loto/shared';
+import { RouterEnum, ScreenNameEnum } from '@loto/shared';
 
 import { HomeComponent } from './home/home.component';
+import { LotoTemplateComponent } from '@loto/components';
 
 const defaultRoutes: Route[] = [
 	{

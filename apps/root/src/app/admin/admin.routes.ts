@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { LotoTemplateComponent, RouterEnum, ScreenNameEnum } from '@loto/shared';
+import { LotoTemplateComponent } from '@loto/components';
+import { RouterEnum, ScreenNameEnum } from '@loto/shared';
 
 import { HomeComponent } from './home/home.component';
 
