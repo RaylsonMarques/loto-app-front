@@ -13,8 +13,9 @@ import { RouterEnum, ScreenNameEnum } from '@loto/shared';
 export class NavbarComponent implements OnInit {
 	public menuItems: any[];
 	public activeScreen: string;
+	public menuActive: boolean;
 
-	constructor(private readonly activatedRoute: ActivatedRoute, private readonly router: Router) {}
+	constructor(private readonly router: Router) {}
 
 	ngOnInit() {
 		this.init();
@@ -28,43 +29,26 @@ export class NavbarComponent implements OnInit {
 		// this.keycloack.logout("");
 	}
 
-	public classVerify(item: any): string {
-		if (item.active) {
-			return 'active';
-		}
-
-		if (!item.enabled) {
-			return 'disabled'
-		}
-
-		return "";
-	}
-
 	public redirect(router: RouterEnum): void {
 		this.router.navigate([router]);
 	}
 
+	public activeMenu(): void {
+		this.menuActive = !this.menuActive;
+	}
+
 	private init(): void {
 		this.initializeVariables();
-		this.verifyActiveItem();
 	}
 
 	private initializeVariables(): void {
 		this.menuItems = [
-			{ title: 'Início', url: `/${this.routerEnum.ROOT}`, name: ScreenNameEnum.ROOT, enabled: true, active: false },
-			{ title: 'Dúvidas', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false },
-			{ title: 'Resultados', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false },
+			{ title: 'Início', url: `/${this.routerEnum.HOME}`, name: ScreenNameEnum.ROOT, enabled: true, active: false },
+			// { title: 'Dúvidas', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false },
+			// { title: 'Resultados', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false },
 			{ title: 'Cadastro', url: `/${this.routerEnum.SIGN_UP}`, name: ScreenNameEnum.SIGN_UP, enabled: true, active: false },
-			{ title: 'Entrar', url: `/${this.routerEnum.ROOT}`, name: null, enabled: true, active: false }
+			{ title: 'Entrar', url: `/${this.routerEnum.SIGN_IN}`, name: ScreenNameEnum.SIGN_IN, enabled: true, active: false }
 		];
-	}
-
-	private verifyActiveItem(): void {
-		this.activatedRoute.data.subscribe((data) => {
-			const screenName: string = data["name"];
-			this.menuItems.forEach(item => {
-				if (item.name == screenName) item.active = true;
-			});
-		});
+		this.menuActive = false;
 	}
 }
