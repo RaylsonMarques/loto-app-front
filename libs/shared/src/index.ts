@@ -14,7 +14,6 @@ import { AuthGuard } from './lib/security/auth.guard';
 import { Page, PageQuery, PageRequest, QueryBuilder } from './lib/utils/pagination';
 import { Utils } from './lib/utils/utils';
 import { Validation } from './lib/validation/validation';
-import { LotoTemplateComponent } from './lib/template/loto-template.component';
 import { RouterEnum } from './lib/enums/RouterEnum';
 import { NotificationService } from './lib/service/notification.service';
 import { RouterService } from './lib/service/router.service';
@@ -60,6 +59,4 @@ export {
   Validation,
   //- Material
   MATERIAL_IMPORTS,
-	//- Template
-	LotoTemplateComponent
 };

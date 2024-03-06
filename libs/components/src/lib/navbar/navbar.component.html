@@ -1,0 +1,11 @@
+<nav>
+	<a class="loto_logo">Fernando Gay</a>
+	<div id="toggle" [ngClass]="{ 'active' : menuActive }" (click)="activeMenu()"></div>
+	<div class="navbar" [ngClass]="{ 'active' : menuActive }">
+		<ul>
+			<li *ngFor="let item of menuItems">
+				<a [routerLink]="item.url" [ngClass]="{'active': item.active }">{{ item.title }}</a>
+			</li>
+		</ul>
+	</div>
+</nav>

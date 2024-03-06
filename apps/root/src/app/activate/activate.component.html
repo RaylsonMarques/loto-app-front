@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="submit()">
 	<h2>Preencha todos os campos abaixo</h2>
-	<p>Para criar uma nova conta, preencha todos os campos abaixo.</p>
+	<p>Para acessar a plataforma, é necessário a ativação do usuário, por favor insira a senha temporária que enviamos no WhatsApp cadastrado, e crie uma nova senha para ativar seu usuário .</p>
 	<div class="row">
 		<loto-input-cpf
 			[form]="form"
@@ -8,7 +8,7 @@
 			label="CPF"
 			[value]="form.get('cpf').value"
 			placeholder="Digite apenas os números do seu CPF"
-			class="col-12 col-md-6 col-lg-4 mb-2"
+			class="col-12 col-md-6 mb-2"
 		></loto-input-cpf>
 
 		<loto-input-password

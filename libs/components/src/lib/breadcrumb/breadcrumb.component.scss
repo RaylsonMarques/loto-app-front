@@ -1,0 +1,48 @@
+.breadcrumb {
+  background: none;
+  font-size: 0.73rem;
+  font-weight: 500;
+  margin: 0;
+	padding-left: 0 !important;
+
+	display: flex;
+	align-items: center;
+
+  a:hover, span:hover {
+    color: dimgrey;
+    text-decoration: none;
+  }
+
+	li{
+    list-style: none;
+    float: left;
+    margin: 5px;
+    color: #1351b4;
+
+		display: flex;
+		align-items: center;
+
+		&:last-child {
+			margin-right: 20px;
+			color: #333333;
+
+			display: flex;
+			align-items: center;
+		}
+
+		&::after {
+			color: #cccccc;
+
+			display: flex;
+			align-items: center;
+		}
+  }
+}
+.chevron {
+  color: #cccccc;
+}
+
+
+.crumb-list {
+	padding-left: 0 !important;
+}
