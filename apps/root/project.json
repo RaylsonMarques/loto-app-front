@@ -16,7 +16,10 @@
 				"tsConfig": "apps/root/tsconfig.app.json",
 				"inlineStyleLanguage": "scss",
 				"assets": ["apps/root/src/favicon.ico", "apps/root/src/assets"],
-				"styles": ["apps/root/src/styles.scss"],
+				"styles": [
+					"apps/root/src/styles.scss",
+					"node_modules/ngx-toastr/toastr.css"
+				],
 				"scripts": [],
 				"allowedCommonJsDependencies": ["rxjs/add/operator/filter", "jquery", "angular2-text-mask"],
 				"customWebpackConfig": {

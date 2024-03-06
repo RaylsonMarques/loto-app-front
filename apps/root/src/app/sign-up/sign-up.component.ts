@@ -27,6 +27,7 @@ export class SignUpComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.init();
+		this.notificationService.success("Mensagem de testes qualquer");
 	}
 
 	public submit(): void {

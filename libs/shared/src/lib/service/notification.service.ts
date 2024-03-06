@@ -7,19 +7,19 @@ export class NotificationService {
   constructor(private readonly toastService: ToastrService) {}
 
   public success(message: string) {
-    this.toastService.success(message, "this.language.success");
+    this.toastService.success(message, "Sucesso");
   }
 
   public error(message: string) {
-    this.toastService.error(message, "this.language.error");
+    this.toastService.error(message, "Ops, ocorreu um erro...");
   }
 
   public info(message: string) {
-    this.toastService.info(message, "this.language.info");
+    this.toastService.info(message, "Importante!");
   }
 
   public alert(message: string) {
-    this.toastService.warning(message, "this.language.alert");
+    this.toastService.warning(message, "Atenção!");
   }
 
   public limpar() {
