@@ -5,6 +5,7 @@ import { IResponseHttpDTO, NotificationService, RouterEnum, Utils } from '@loto/
 
 import { IDoLoginDTO } from '../../core/model/interface/IDoLoginDTO';
 import { LoginService } from '../../core/service/Login.service';
+import { DetailUserService } from '../../core/service/user/DetailUser.service';
 
 @Component({
 	selector: 'loto-sign-in',
@@ -17,6 +18,7 @@ export class SignInComponent implements OnInit {
 	constructor(
 		//- Service
 		private readonly loginService: LoginService,
+		private readonly detailUserService: DetailUserService,
 		private readonly notificationService: NotificationService,
 		//- Router
 		private readonly router: Router,
@@ -25,6 +27,23 @@ export class SignInComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.init();
+	}
+
+	public validateUserActive(event) {
+		if (event.target.value && !event.target.value.includes("_")) {
+			this.detailUserService.isUserActive(event.target.value).subscribe({
+				next: ({ payload, message }: IResponseHttpDTO) => {
+					if (!payload) {
+						this.notificationService.alert(message);
+						sessionStorage.setItem('cpf', event.target.value);
+						this.router.navigate([RouterEnum.ACTIVATE]);
+					}
+				},
+				error: (error) => {
+					this.notificationService.error(error.message)
+				}
+			});
+		}
 	}
 
 	public submit(): void {

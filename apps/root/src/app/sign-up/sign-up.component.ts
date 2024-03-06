@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ICreateUserDTO } from '../../core/model/interface/ICreateUserDTO';
-import { IResponseHttpDTO, RouterEnum, Utils } from '@loto/shared';
-import { CreateUserService } from '../../core/service/CreateUser.service';
 import { Router } from '@angular/router';
+import { IResponseHttpDTO, RouterEnum, Utils } from '@loto/shared';
+
+import { NotificationService } from '../../../../../libs/shared/src/lib/service/notification.service';
+import { ICreateUserDTO } from '../../core/model/interface/ICreateUserDTO';
+import { CreateUserService } from '../../core/service/CreateUser.service';
 
 @Component({
 	selector: 'loto-sign-up',
@@ -17,6 +19,7 @@ export class SignUpComponent implements OnInit {
 	constructor(
 		//- Service
 		private readonly createUserService: CreateUserService,
+		private readonly notificationService: NotificationService,
 		//- Util
 		private readonly formBuilder: FormBuilder,
 		private readonly router: Router
@@ -33,6 +36,12 @@ export class SignUpComponent implements OnInit {
 			return;
 		}
 
+		if (this.form.controls.whatsapp.value !== this.form.controls.whatsapp_confirmation.value) {
+			this.form.controls.whatsapp_confirmation.setValue(null);
+			this.form.controls.whatsapp_confirmation.markAsDirty();
+			return;
+		}
+
 		if (!this.cpfIsValid()) {
 			this.form.controls.cpf.setValue(null);
 			this.form.controls.cpf.markAsDirty();
@@ -42,23 +51,23 @@ export class SignUpComponent implements OnInit {
 		const user: ICreateUserDTO = this.treatData();
 		this.createUserService.create(user).subscribe({
 			next: (response: IResponseHttpDTO) => {
-				console.log(response);
+				this.notificationService.success(response.message);
+				this.router.navigate([RouterEnum.SIGN_IN]);
 			},
 			error: (error) => {
-				console.error(error);
-			}
+				this.notificationService.error(error.message);
+			},
 		});
 	}
 
 	public buttonDisabled(): boolean {
+		console.log(this.form.valid);
 		return !this.form.valid;
 	}
 
 	public back(): void {
 		this.router.navigate([RouterEnum.HOME]);
 	}
-
-	public validatePassword(event: any) {}
 
 	private init(): void {
 		this.createForm();
@@ -70,33 +79,31 @@ export class SignUpComponent implements OnInit {
 			cpf: [null, Validators.required],
 			birthdate: [null, Validators.required],
 			whatsapp: [null, Validators.required],
-			whatsapp_confirmation: [null, Validators.required]
+			whatsapp_confirmation: [null, Validators.required],
 		});
 	}
 
 	private treatData(): ICreateUserDTO {
-		const { complete_name, cpf, birthdate, whatsapp, password } = this.form.controls;
+		const { complete_name, cpf, birthdate, whatsapp } = this.form.controls;
 
 		const user: ICreateUserDTO = {
 			name: complete_name.value,
 			cpf: cpf.value,
 			birthdate: birthdate.value,
 			whatsApp: whatsapp.value,
-		}
+		};
 
 		return user;
 	}
 
-
 	private telephoneIsValid(): boolean {
 		const { whatsapp } = this.form.controls;
-		if (whatsapp.value.includes("_")) {
+		if (whatsapp.value.includes('_')) {
 			return false;
 		}
 
 		return true;
 	}
-
 
 	private cpfIsValid(): boolean {
 		const { cpf } = this.form.controls;
