@@ -27,7 +27,6 @@ export class SignUpComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.init();
-		this.notificationService.success("Mensagem de testes qualquer");
 	}
 
 	public submit(): void {
@@ -51,8 +50,8 @@ export class SignUpComponent implements OnInit {
 
 		const user: ICreateUserDTO = this.treatData();
 		this.createUserService.create(user).subscribe({
-			next: (response: IResponseHttpDTO) => {
-				this.notificationService.success(response.message);
+			next: ({ message }: IResponseHttpDTO) => {
+				this.notificationService.success(message);
 				this.router.navigate([RouterEnum.SIGN_IN]);
 			},
 			error: (error) => {
@@ -62,7 +61,6 @@ export class SignUpComponent implements OnInit {
 	}
 
 	public buttonDisabled(): boolean {
-		console.log(this.form.valid);
 		return !this.form.valid;
 	}
 

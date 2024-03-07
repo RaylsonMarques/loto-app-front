@@ -6,6 +6,8 @@ import { IResponseHttpDTO, NotificationService, RouterEnum, Utils } from '@loto/
 import { IDoLoginDTO } from '../../core/model/interface/IDoLoginDTO';
 import { LoginService } from '../../core/service/Login.service';
 import { DetailUserService } from '../../core/service/user/DetailUser.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { ControlValidationService } from '../../core/service/control/ControlValidation.service';
 
 @Component({
 	selector: 'loto-sign-in',
@@ -19,6 +21,7 @@ export class SignInComponent implements OnInit {
 		//- Service
 		private readonly loginService: LoginService,
 		private readonly detailUserService: DetailUserService,
+		private readonly controlValidationService: ControlValidationService,
 		private readonly notificationService: NotificationService,
 		//- Router
 		private readonly router: Router,
@@ -35,8 +38,9 @@ export class SignInComponent implements OnInit {
 				next: ({ payload, message }: IResponseHttpDTO) => {
 					if (!payload) {
 						this.notificationService.alert(message);
+						this.notificationService.alert("Redirecionando para ativação do usuário");
 						sessionStorage.setItem('cpf', event.target.value);
-						this.router.navigate([RouterEnum.ACTIVATE]);
+						setTimeout(() => this.router.navigate([RouterEnum.ACTIVATE]), 2000);
 					}
 				},
 				error: (error) => {
@@ -55,11 +59,20 @@ export class SignInComponent implements OnInit {
 
 		const login: IDoLoginDTO = this.treatData();
 		this.loginService.login(login).subscribe({
-			next: (response: IResponseHttpDTO) => {
-				this.notificationService.success(response.message);
-				this.router.navigate([RouterEnum.SIGN_IN]);
+			next: ({ message: messageLogin, payload: token }: IResponseHttpDTO) => {
+				sessionStorage.setItem("JWT", `Bearer ${token}`);
+
+				this.notificationService.success(messageLogin);
+				this.controlValidationService.isAdmin().subscribe({
+					next: ({ payload }: IResponseHttpDTO) => {
+						if (payload) this.router.navigate([RouterEnum.DASHBOARD_ADMIN]);
+					},
+					error: ({ error }: HttpErrorResponse) => {
+						this.router.navigate([RouterEnum.DASHBOARD_DEFAULT]);
+					}
+				});
 			},
-			error: (error) => {
+			error: ({ error }: HttpErrorResponse) => {
 				this.notificationService.error(error.message);
 			}
 		});

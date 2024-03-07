@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IActivateUserDTO } from '../../core/model/interface/IActivateUserDTO';
-import { IResponseHttpDTO, NotificationService } from '@loto/shared';
+import { IResponseHttpDTO, NotificationService, RouterEnum } from '@loto/shared';
 import { CreateUserService } from '../../core/service/CreateUser.service';
 
 @Component({
@@ -35,21 +35,22 @@ export class ActivateComponent implements OnInit {
 
 		const payload: IActivateUserDTO = this.treatData();
 		this.createUserService.activate(payload).subscribe({
-			next: (response: IResponseHttpDTO) => {
-				console.log(response);
-				this.notificationService.success(response.message);
+			next: ({ message }: IResponseHttpDTO) => {
+				this.notificationService.success(message);
+				this.router.navigate([RouterEnum.SIGN_IN]);
 			},
 			error: (error) => {
-				console.error(error);
 				this.notificationService.error(error.message);
 			}
 		});
 	}
 
-	public back(): void {}
+	public back(): void {
+		this.router.navigate([RouterEnum.HOME]);
+	}
 
 	public buttonDisabled(): boolean {
-		return false;
+		return !this.form.valid;
 	}
 
 	private init(): void {
