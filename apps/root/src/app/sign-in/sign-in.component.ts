@@ -65,10 +65,10 @@ export class SignInComponent implements OnInit {
 				this.notificationService.success(messageLogin);
 				this.controlValidationService.isAdmin().subscribe({
 					next: ({ payload }: IResponseHttpDTO) => {
-						if (payload) this.router.navigate([RouterEnum.DASHBOARD_ADMIN]);
+						if (payload) this.router.navigate([`${RouterEnum.DASHBOARD_ADMIN}/${RouterEnum.HOME}`]);
 					},
 					error: ({ error }: HttpErrorResponse) => {
-						this.router.navigate([RouterEnum.DASHBOARD_DEFAULT]);
+						this.router.navigate([`${RouterEnum.DASHBOARD_DEFAULT}/${RouterEnum.HOME}`]);
 					}
 				});
 			},

@@ -4,6 +4,6 @@ export enum RouterEnum {
 	SIGN_IN = "entrar",
 	SIGN_UP = "cadastrar",
 	ACTIVATE = "ativar",
-	DASHBOARD_ADMIN = 'dashboard/admin',
-	DASHBOARD_DEFAULT = 'dashboard/usuario',
+	DASHBOARD_ADMIN = 'app/dashboard/admin',
+	DASHBOARD_DEFAULT = 'app/dashboard/usuario',
 }

@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { LotoTemplateComponent } from '@loto/components';
+import { AppTemplateComponent } from '@loto/components';
 import { RouterEnum, ScreenNameEnum } from '@loto/shared';
 
-import { HomeComponent } from './home/home.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 export const adminRoutes: Route[] = [
 	{
 		path: RouterEnum.ROOT,
-		component: LotoTemplateComponent,
+		component: AppTemplateComponent,
 		children: [
 			//- Public routes
 			{
-				path: RouterEnum.HOME,
-				component: HomeComponent,
+				path: RouterEnum.ROOT,
+				component: AdminHomeComponent,
 				data: {
+					breadcrumb: 'Início',
 					name: ScreenNameEnum.DASHBOARD_ADMIN,
 				},
 			},

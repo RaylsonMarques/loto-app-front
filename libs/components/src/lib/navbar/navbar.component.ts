@@ -1,21 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { RouterEnum, ScreenNameEnum } from '@loto/shared';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NotificationService, RouterEnum, ScreenNameEnum } from '@loto/shared';
 
-/**
- * Barra lateral superior, fragmento do template, guarda as informações do usuário logado.
- */
+import { ControlValidationService } from '../../../../../apps/root/src/core/service/control/ControlValidation.service';
+import { IMenuItems } from './menu-items.model';
+
 @Component({
 	selector: 'loto-navbar',
 	templateUrl: './navbar.component.html',
 	styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-	public menuItems: any[];
+	//- Input
+	@Input() public isAppNavbar: boolean;
+	//- public
+	public menuItems: IMenuItems[];
 	public activeScreen: string;
 	public menuActive: boolean;
 
-	constructor(private readonly router: Router) {}
+	constructor(
+		//- Service
+		private readonly controlValidationService: ControlValidationService,
+		private readonly notificationService: NotificationService,
+		private readonly router: Router
+	) {}
 
 	ngOnInit() {
 		this.init();
@@ -42,13 +50,23 @@ export class NavbarComponent implements OnInit {
 	}
 
 	private initializeVariables(): void {
-		this.menuItems = [
-			{ title: 'Início', url: `/${this.routerEnum.HOME}`, name: ScreenNameEnum.ROOT, enabled: true, active: false },
-			// { title: 'Dúvidas', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false },
-			// { title: 'Resultados', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false },
-			{ title: 'Cadastro', url: `/${this.routerEnum.SIGN_UP}`, name: ScreenNameEnum.SIGN_UP, enabled: true, active: false },
-			{ title: 'Entrar', url: `/${this.routerEnum.SIGN_IN}`, name: ScreenNameEnum.SIGN_IN, enabled: true, active: false }
-		];
+		this.menuItems = this.buildSiteNavbar();
 		this.menuActive = false;
 	}
+
+	private buildSiteNavbar(): IMenuItems[] {
+		const items: IMenuItems[] = [];
+		items.push(
+			//- Site options
+			{ title: 'Início', url: `/${this.routerEnum.HOME}`, name: ScreenNameEnum.ROOT, enabled: true, active: false, appOption: false },
+			{ title: 'Dúvidas', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false, appOption: false },
+			{ title: 'Resultados', url: `/${this.routerEnum.ROOT}`, name: null, enabled: false, active: false, appOption: false },
+			{ title: 'Cadastro', url: `/${this.routerEnum.SIGN_UP}`, name: ScreenNameEnum.SIGN_UP, enabled: true, active: false, appOption: false },
+			{ title: 'Entrar', url: `/${this.routerEnum.SIGN_IN}`, name: ScreenNameEnum.SIGN_IN, enabled: true, active: false, appOption: false },
+		);
+
+		return items;
+	}
+
+
 }
