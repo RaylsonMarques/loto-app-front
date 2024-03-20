@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MATERIAL_IMPORTS } from '@loto/shared';
@@ -21,8 +21,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TableComponent } from './table/table.component';
 import { VersionComponent } from './version/version.component';
 import { InputTelephoneComponent } from './input-telephone/input-telephone.component';
-import { LotoTemplateComponent } from './template/loto-template.component';
+import { SiteTemplateComponent } from './template/site/site-template.component';
+import { AppTemplateComponent } from './template/app/app-template.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { RightbarComponent } from './rightbar/rightbar.component';
 
 @NgModule({
 	declarations: [
@@ -39,11 +41,13 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 		ListComponent,
 		NavbarComponent,
 		PaginationComponent,
+		RightbarComponent,
 		SidebarComponent,
 		TableComponent,
 		VersionComponent,
 		IconComponent,
-		LotoTemplateComponent
+		SiteTemplateComponent,
+		AppTemplateComponent,
 	],
 	exports: [
 		BreadcrumbComponent,
@@ -59,12 +63,15 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 		ListComponent,
 		NavbarComponent,
 		PaginationComponent,
+		RightbarComponent,
 		SidebarComponent,
 		TableComponent,
 		VersionComponent,
 		IconComponent,
-		LotoTemplateComponent
+		SiteTemplateComponent,
+		AppTemplateComponent,
 	],
 	imports: [CommonModule, MATERIAL_IMPORTS, RouterModule, ReactiveFormsModule, FormsModule, TextMaskModule],
+	schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ComponentsModule {}

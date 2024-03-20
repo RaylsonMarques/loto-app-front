@@ -1,0 +1,42 @@
+.card {
+	background-color: var(--color-white);
+	padding: var(--card-padding);
+	border-radius: var(--card-border-radius);
+	margin-top: 1rem;
+	box-shadow: var(--box-shadow);
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover{
+		box-shadow: none;
+	}
+
+	.body{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	h3{
+		margin-left: 0.6rem;
+		font-size: 1rem;
+	}
+
+	.progresss{
+		position: relative;
+		width: 92px;
+		height: 92px;
+		border-radius: 50%;
+
+		.percentage{
+			position: absolute;
+			top: -3px;
+			left: -1px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
