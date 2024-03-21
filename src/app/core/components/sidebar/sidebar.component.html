@@ -1,0 +1,20 @@
+<aside [style]="activeSidebar ? 'display: block;' : 'display: none'" (window:resize)="onResize()">
+	<!-- Header -->
+	<div class="toggle">
+		<div class="logo">
+			<img src="/assets/img/logo.png" alt="LoteriaPlus logo" title="Logo da Loteria Plus" />
+		</div>
+
+		<div class="close close-btn" (click)="closeSidebar()">
+			<span class="material-icons-sharp">close</span>
+		</div>
+	</div>
+
+	<!-- Options -->
+	<div class="sidebar">
+		<a *ngFor="let option of menuOptions" [ngClass]="{'active' : option.active }" [routerLink]="option.link">
+			<span class="material-icons">{{ option.icon }}</span>
+			<h3>{{ option.title }}</h3>
+		</a>
+	</div>
+</aside>

@@ -1,0 +1,96 @@
+.sidebar-wrapper[data-color="danger"] .nav .nav-item.active > a:not([data-toggle="collapse"]) {
+	background-color: #f44336 !important;
+	box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(244 67 54 / 40%) !important;
+}
+
+.sidebar-wrapper[data-color="danger"] li.active > a {
+	background-color: #fff !important;
+	box-shadow: 0 4px 20px 0 rgb(0 0 0 / 14%), 0 7px 10px -5px hsl(0deg 0% 100% / 40%) !important;
+}
+
+.sidebar-wrapper .nav li .dropdown-menu a,
+.sidebar-wrapper .nav li a {
+	margin: 10px 15px 0;
+	border-radius: 3px;
+	color: #3c4858;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-transform: capitalize;
+	font-size: 13px;
+}
+
+.sidebar .user {
+	padding-bottom: 20px;
+	margin: 20px auto 0;
+	position: relative;
+}
+
+.sidebar .user .photo {
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	float: left;
+	z-index: 5;
+	margin-right: 11px;
+	border-radius: 50%;
+	margin-left: 23px;
+	box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.sidebar .user .user-info > a > span {
+	display: block;
+	position: relative;
+	opacity: 1;
+}
+
+.sidebar .user .user-info {
+	padding-top: 5px;
+}
+
+.sidebar .nav .caret {
+	margin-top: 13px;
+	position: absolute;
+	right: 6px;
+}
+
+.sidebar .caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 4px dashed;
+	border-top: 4px solid\9;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.btn-group.bootstrap-select.open .caret,
+.dropdown.open .caret,
+.dropup.open .caret,
+a[data-toggle="collapse"][aria-expanded="true"] .caret {
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+::selection {
+	background: #0c2c57;
+	color: #ffffff;
+}
+
+.toolTip {
+	font-size: 1rem;
+}
+
+.mat-input-element:disabled,
+.mat-select-disabled .mat-select-value {
+	color: #333333 !important;
+	background: rgb(0, 0, 0, 0) !important;
+}
+
+[disabled],
+.disabled {
+	cursor: not-allowed;
+	opacity: 0.95 !important;
+}
