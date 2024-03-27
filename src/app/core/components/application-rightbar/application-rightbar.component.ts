@@ -66,9 +66,10 @@ export class ApplicationRightbarComponent implements OnInit {
 		this.actionsForApps = [];
 		//- Create options
 		const options: any = {
+			//- Jackpot
 			"JACKPOT": [
-				{ title: "Novo bolão", icon: "add", link: `${RouterEnum.ROOT_APP}/${RouterEnum.JACKPOT_ROOT}/${RouterEnum.CREATE}` },
-				{ title: "Ver todos os bolões", icon: "list", link: `${RouterEnum.ROOT_APP}/${RouterEnum.JACKPOT_ROOT}/${RouterEnum.CREATE}` }
+				{ title: "Novo bolão", icon: "add", link: `${RouterEnum.ROOT_APP}/${RouterEnum.JACKPOT_ROOT}/${RouterEnum.CREATE}`, adminOption: true },
+				{ title: "Ver todos os bolões", icon: "list", link: `${RouterEnum.ROOT_APP}/${RouterEnum.JACKPOT_ROOT}/${RouterEnum.CREATE}`, adminOption: true }
 			],
 			"JACKPOT_CREATE": [],
 		};
