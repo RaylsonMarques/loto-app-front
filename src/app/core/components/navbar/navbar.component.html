@@ -1,0 +1,35 @@
+<!-- If not app navabar -->
+<nav *ngIf="!isAppNavbar" class="site-navbar">
+	<a class="loto_logo">LoteriaPlus</a>
+	<div id="toggle" [ngClass]="{ 'active' : menuActive }" (click)="activeMenu()"></div>
+	<div class="navbar" [ngClass]="{ 'active' : menuActive }">
+		<ul>
+			<li *ngFor="let item of menuItems" [ngClass]="{ 'disabled' : !item.enabled }">
+				<a [routerLink]="item.url" [ngClass]="{'active': item.active }">{{ item.title }}</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<!-- If is app navbar -->
+<nav *ngIf="isAppNavbar" class="app-navbar">
+	<div class="nav">
+		<button id="menu-btn" (click)="openSidebar()">
+			<span class="material-icons-sharp">menu</span>
+		</button>
+		<div class="dark-mode" (click)="darkTheme()">
+			<span class="material-icons-sharp active">light_mode</span>
+			<span class="material-icons-sharp">dark_mode</span>
+		</div>
+
+		<div class="profile">
+			<div class="info">
+				<p>Olá, <b>Raylson</b></p>
+				<small class="text-muted">Admin</small>
+			</div>
+			<div class="profile-photo">
+				<span>RM</span>
+			</div>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,16 @@
+<aside class="application-right-section">
+	<loto-navbar [isAppNavbar]="true" (activeSidebar)="activateSidebar($event)"></loto-navbar>
+
+	<div class="reminders" *ngIf="actionsForApps.length > 0">
+		<div class="header">
+			<h2>Outras opções</h2>
+		</div>
+
+		<div *ngFor="let action of actionsForApps" class="notification add-reminder" (click)="redirect(action.link)">
+			<div>
+				<span class="material-icons">{{ action.icon }}</span>
+				<h3>{{ action.title }}</h3>
+			</div>
+		</div>
+	</div>
+</aside>

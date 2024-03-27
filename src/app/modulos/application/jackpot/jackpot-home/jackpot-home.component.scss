@@ -1,0 +1,35 @@
+.visibility-button {
+	background-color: var(--color-white);
+	color: var(--color-warning);
+	font-weight: 500;
+	transition: 0.5s;
+
+	&:hover {
+		background-color: var(--color-warning);
+		color: var(--color-dark);
+	}
+}
+
+.edit-button {
+	background-color: var(--color-white);
+	color: var(--color-primary);
+	font-weight: 500;
+	transition: 0.5s;
+
+	&:hover {
+		background-color: var(--color-primary);
+		color: var(--color-white);
+	}
+}
+
+.delete-button {
+	background-color: var(--color-white);
+	color: var(--color-danger);
+	font-weight: 500;
+	transition: 0.5s;
+
+	&:hover {
+		background-color: var(--color-danger);
+		color: var(--color-white);
+	}
+}

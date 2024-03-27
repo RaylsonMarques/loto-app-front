@@ -1,0 +1,222 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+	--color-primary: #6c9bcf;
+	--color-danger: #ff0060;
+	--color-success: #1b9c85;
+	--color-warning: #f7d060;
+	--color-white: #fff;
+	--color-info-dark: #7d8da1;
+	--color-dark: #363949;
+	--color-light: rgba(132, 139, 200, 0.18);
+	--color-dark-variant: #677483;
+	--color-background: #f6f6f9;
+
+	--card-border-radius: 2rem;
+	--border-radius-1: 0.4rem;
+	--border-radius-2: 1.2rem;
+
+	--card-padding: 1.8rem;
+	--padding-1: 1.2rem;
+
+	--box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables {
+	--color-background: #181a1e;
+	--color-white: #202528;
+	--color-dark: #edeffd;
+	--color-dark-variant: #a3bdcc;
+	--color-light: rgba(0, 0, 0, 0.4);
+	--box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+html {
+	@media (max-width: 1080px) {
+		font-size: 93.75%; //- 15px
+	}
+
+	@media (max-width: 720px) {
+		font-size: 87.5%; //- 14px
+	}
+
+	body {
+		overflow-x: hidden !important;
+		-webkit-font-smoothing: antialiased;
+
+		width: 100vw;
+		height: 100vh;
+
+		font-family: 'Poppins', sans-serif;
+		font-size: 0.88rem;
+
+		user-select: none;
+		overflow-x: hidden;
+
+		color: var(--color-dark);
+		background-color: var(--color-background);
+
+		a {
+			color: var(--color-dark);
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		h1,
+		h2,
+		h3,
+		small,
+		p,
+		b {
+			margin: 0 !important;
+		}
+
+		h1 {
+			font-weight: 800;
+			font-size: 1.8rem;
+		}
+
+		h2 {
+			font-weight: 600;
+			font-size: 1.4rem;
+		}
+
+		h3 {
+			font-weight: 500;
+			font-size: 0.87rem;
+		}
+
+		small {
+			font-size: 0.76rem;
+		}
+
+		p {
+			color: var(--color-dark-variant);
+		}
+
+		b {
+			color: var(--color-dark);
+		}
+
+		.text-muted {
+			color: var(--color-info-dark);
+		}
+
+		.primary {
+			color: var(--color-primary);
+		}
+
+		.danger {
+			color: var(--color-danger);
+		}
+
+		.success {
+			color: var(--color-success);
+		}
+
+		.warning {
+			color: var(--color-warning);
+		}
+		/* Buttons */
+		/** Primary **/
+		.button-primary-fill {
+			background-color: var(--color-primary);
+			color: var(--color-white);
+			transition: 0.5s;
+
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
+
+		.button-primary-outline {
+			background-color: var(--color-background);
+			color: var(--color-primary);
+			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-primary);
+				color: var(--color-white);
+			}
+		}
+
+		/** Danger **/
+		.button-danger-fill {
+			background-color: var(--color-primary);
+			color: var(--color-white);
+			transition: 0.5s;
+
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
+
+		.button-danger-outline {
+			background-color: var(--color-background);
+			color: var(--color-danger);
+			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-danger);
+				color: var(--color-white);
+			}
+		}
+
+		/** Success **/
+		.button-success-fill {
+			background-color: var(--color-success);
+			color: var(--color-white);
+			transition: 0.5s;
+
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
+
+		.button-success-outline {
+			background-color: var(--color-background);
+			color: var(--color-success);
+			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-success);
+				color: var(--color-white);
+			}
+		}
+
+		/** Warning **/
+		.button-warning-fill {
+			background-color: var(--color-warning);
+			color: var(--color-dark);
+			transition: 0.5s;
+
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
+
+		.button-warning-outline {
+			background-color: var(--color-background);
+			color: var(--color-dark);
+			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-warning);
+				color: var(--color-dark);
+			}
+		}
+
+		input {
+			outline: none !important;
+		}
+	}
+}
