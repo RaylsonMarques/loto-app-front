@@ -25,6 +25,7 @@ import { VersionComponent } from "./components/version/version.component";
 import { AppTemplateComponent } from "./template/app/app-template.component";
 import { SiteTemplateComponent } from "./template/site/site-template.component";
 import { InputMoneyComponent } from "./components/input-money/input-money.component";
+import { InputPasswordComponent } from "./components/input-password/input-password.component";
 
 @NgModule({
 	declarations: [
@@ -37,6 +38,7 @@ import { InputMoneyComponent } from "./components/input-money/input-money.compon
 		InputTimeComponent,
 		InputMoneyComponent,
 		InputNumberComponent,
+		InputPasswordComponent,
 		ListComponent,
 		NavbarComponent,
 		RightbarComponent,
@@ -57,6 +59,7 @@ import { InputMoneyComponent } from "./components/input-money/input-money.compon
 		InputTimeComponent,
 		InputMoneyComponent,
 		InputNumberComponent,
+		InputPasswordComponent,
 		ListComponent,
 		NavbarComponent,
 		RightbarComponent,
