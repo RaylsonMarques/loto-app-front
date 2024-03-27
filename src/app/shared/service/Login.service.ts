@@ -11,6 +11,6 @@ export class LoginService {
 	constructor(private readonly http: HttpClient) {}
 
 	public login(body: IDoLoginDTO): Observable<IResponseHttpDTO> {
-		return this.http.post<IResponseHttpDTO>(`${environment.API_HOST}/login`, body);
+		return this.http.post<IResponseHttpDTO>(`${environment.hostApiUrl}/login`, body);
 	}
 }

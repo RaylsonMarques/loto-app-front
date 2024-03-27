@@ -9,6 +9,6 @@ export class DetailUserService {
 	constructor(private readonly http: HttpClient) {}
 
 	public isUserActive(cpf: string): Observable<IResponseHttpDTO> {
-		return this.http.post<IResponseHttpDTO>(`${environment.API_HOST}/user/user-active`, { cpf });
+		return this.http.post<IResponseHttpDTO>(`${environment.hostApiUrl}/user/user-active`, { cpf });
 	}
 }

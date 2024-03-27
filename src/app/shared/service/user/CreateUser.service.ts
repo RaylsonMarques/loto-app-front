@@ -11,10 +11,10 @@ export class CreateUserService {
 	constructor(private readonly http: HttpClient) {}
 
 	public create(user: ICreateUserDTO): Observable<IResponseHttpDTO> {
-		return this.http.post<IResponseHttpDTO>(`${environment.API_HOST}/user/create`, user);
+		return this.http.post<IResponseHttpDTO>(`${environment.hostApiUrl}/user/create`, user);
 	}
 
 	public activate(payload: IActivateUserDTO): Observable<IResponseHttpDTO> {
-		return this.http.post<IResponseHttpDTO>(`${environment.API_HOST}/user/activate`, payload);
+		return this.http.post<IResponseHttpDTO>(`${environment.hostApiUrl}/user/activate`, payload);
 	}
 }
