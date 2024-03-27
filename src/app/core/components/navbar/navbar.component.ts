@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
 import { RouterEnum } from "app/shared/enums/RouterEnum";
 import { ScreenNameEnum } from "app/shared/enums/ScreenNameEnum";
@@ -15,6 +15,8 @@ import { IMenuItems } from "./menu-items.model";
 export class NavbarComponent implements OnInit {
 	//- Input
 	@Input() public isAppNavbar: boolean;
+	//- Output
+	@Output() activeSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
 	//- public
 	public menuItems: IMenuItems[];
 	public activeScreen: string;
@@ -45,6 +47,18 @@ export class NavbarComponent implements OnInit {
 
 	public activeMenu(): void {
 		this.menuActive = !this.menuActive;
+	}
+
+	public openSidebar(): void {
+		this.activeSidebar.emit(true);
+	}
+
+	public darkTheme(): void {
+		document.body.classList.toggle("dark-mode-variables");
+
+		const darkMode = document.querySelector(".dark-mode");
+		darkMode.querySelector("span:nth-child(1)").classList.toggle("active");
+		darkMode.querySelector("span:nth-child(2)").classList.toggle("active");
 	}
 
 	private init(): void {

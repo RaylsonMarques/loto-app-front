@@ -7,4 +7,8 @@ export enum RouterEnum {
 	ACTIVATE = "ativar",
 	DASHBOARD_ADMIN = 'dashboard/admin',
 	DASHBOARD_DEFAULT = 'dashboard/usuario',
+	//- Application routes
+	JACKPOT_ROOT = "jackpot",
+	//- Generic routes
+	CREATE = "create"
 }

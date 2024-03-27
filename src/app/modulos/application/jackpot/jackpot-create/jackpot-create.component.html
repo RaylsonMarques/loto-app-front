@@ -1,0 +1,80 @@
+<loto-card mainTitle="Novo bolão" infoTitle="" [hasCustomContent]="true">
+	<form [formGroup]="form" (submit)="submit(false)">
+		<h2>Preencha os campos abaixo</h2>
+		<p class="text-muted">Para criar um novo bolão, preencha todos os campos abaixo. Os campos com (*) são obrigatórios.</p>
+
+		<div class="row mt-5">
+			<loto-input-text
+				[form]="form"
+				controlName="name"
+				label="Nome do bolão"
+				[value]="form.get('name').value"
+				placeholder="Digite seu nome completo"
+				class="col-12 col-md-6 mb-2"
+			></loto-input-text>
+
+			<loto-input-text
+				[form]="form"
+				controlName="contest"
+				label="Concurso"
+				[value]="form.get('contest').value"
+				placeholder="Digite o concurso dos jogos"
+				class="col-12 col-md-6 mb-2"
+			></loto-input-text>
+
+			<loto-input-text
+				[form]="form"
+				controlName="price"
+				label="Prêmio"
+				[value]="form.get('price').value"
+				placeholder="R$ 0,00"
+				class="col-12 col-md-6 mb-2"
+				(keyup)="formatMoney($event)"
+			></loto-input-text>
+
+			<loto-input-date
+				[form]="form"
+				controlName="dateGame"
+				label="Data do bolão"
+				[readonly]="false"
+				[dataMinima]="minDate"
+				class="col-12 col-md-6 mb-2"
+			></loto-input-date>
+
+			<loto-input-number
+				[form]="form"
+				controlName="amountGames"
+				label="Quantidade de jogos"
+				[value]="form.get('amountGames').value"
+				placeholder="Digite a quantidade de jogos do bolão"
+				class="col-12 col-md-6 col-lg-4  mb-2"
+			></loto-input-number>
+
+			<loto-input-number
+				[form]="form"
+				controlName="amountDozens"
+				label="Dezenas"
+				[value]="form.get('amountDozens').value"
+				placeholder="Digite a quantidade de dezenas dos jogos"
+				class="col-12 col-md-6 col-lg-4  mb-2"
+			></loto-input-number>
+
+			<loto-input-number
+				[form]="form"
+				controlName="quotas"
+				label="Cotas do bolão"
+				[value]="form.get('quotas').value"
+				placeholder="Digite a quantidade total de cotas"
+				class="col-12 col-md-6 col-lg-4 mb-2"
+			></loto-input-number>
+		</div>
+
+		<div class="d-flex justify-content-between">
+			<button mat-raised-button type="button" class="button-danger-outline">Voltar</button>
+			<div>
+				<button mat-raised-button class="button-warning-outline" (click)="submit(true)">Salvar rascunho</button>
+				<button mat-raised-button class="button-primary-fill ml-2" type="submit">Salvar</button>
+			</div>
+		</div>
+	</form>
+</loto-card>

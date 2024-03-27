@@ -8,6 +8,7 @@ export class Utils {
 	static readonly MASK_TELEFONE_CELULAR = ["(", /\d/, /\d/, ")"," ", /\d/, /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/];
 	static readonly MASK_TELEFONE_FIXO = ["(", /\d/, /\d/, ")", /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/];
 	static readonly MASK_CEP = [/\d/, /\d/, ".", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/];
+	static readonly MASK_MONEY = ["R$ ", /(\d{3})/, ",", /(\d{2})/];
 
 	static capitalizar(txt: string) {
 		if (txt == null) {

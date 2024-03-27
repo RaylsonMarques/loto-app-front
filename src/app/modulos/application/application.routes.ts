@@ -17,6 +17,7 @@ export const applicationRoutes: Route[] = [
 				data: {
 					breadcrumb: "Dashboard",
 					name: ScreenNameEnum.DASHBOARD,
+					showRightbar: true
 				},
 			},
 			{
@@ -25,10 +26,21 @@ export const applicationRoutes: Route[] = [
 				data: {
 					breadcrumb: "Dashboard",
 					name: ScreenNameEnum.DASHBOARD,
+					showRightbar: true
 				},
 			},
 		],
 	},
+	//- Jackpot routes
+	{
+		path: RouterEnum.JACKPOT_ROOT,
+		loadChildren: () => import("./jackpot/jackpot.module").then((module) => module.JackpotModule),
+		data: {
+			breadcrumb: "Bolões",
+			name: ScreenNameEnum.JACKPOT,
+			showRightbar: false
+		}
+	}
 ];
 
 @NgModule({

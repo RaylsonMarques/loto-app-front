@@ -6,11 +6,15 @@
 			<p>{{ description }}</p>
 		</div>
 
-		<div *ngIf="hasCustomContent && customContentGraph.show" class="progresss">
+		<div *ngIf="hasCustomContent && customContentGraph && customContentGraph.show" class="progresss">
 			<ng-content></ng-content>
 			<div class="percentage">
 				<p>{{ customContentGraph.graphNumberInfo }}</p>
 			</div>
 		</div>
+	</div>
+
+	<div *ngIf="hasCustomContent && !customContentGraph">
+		<ng-content></ng-content>
 	</div>
 </div>

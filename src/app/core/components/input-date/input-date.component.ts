@@ -25,23 +25,13 @@ import { DATE_FORMAT } from "./date-format";
 	],
 })
 export class InputDateComponent extends BaseInput implements OnInit {
-	@Input()
-	label = "";
-
-	@Input()
-	controlName: any;
-
-	@Input()
-	form: FormGroup;
-
-	@Input()
-	disabled = false;
-
-	@Input()
-	dataMaxima: Date;
-
-	@Input()
-	readonly = false;
+	@Input() public label = "";
+	@Input() public controlName: any;
+	@Input() public form: FormGroup;
+	@Input() public disabled = false;
+	@Input() public dataMaxima?: Date;
+	@Input() public dataMinima?: Date;
+	@Input() public readonly = false;
 
 	mask = Utils.MASK_DATA;
 

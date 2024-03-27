@@ -122,52 +122,97 @@ html {
 		.warning {
 			color: var(--color-warning);
 		}
-
-		.button {
-			padding: 0.8rem 1.5rem;
-
-			background-color: transparent;
-			border: none;
-			border-radius: 1rem;
-
+		/* Buttons */
+		/** Primary **/
+		.button-primary-fill {
+			background-color: var(--color-primary);
+			color: var(--color-white);
 			transition: 0.5s;
 
 			&:hover {
-				filter: brightness(0.9);
-			}
-
-			&:disabled {
-				filter: grayscale(0.25);
+				filter: brightness(0.8);
 			}
 		}
 
-		.button-block {
-			display: block;
-			width: 100%;
-
-			max-width: 500px;
-		}
-
-		.button-confirmation-fill {
-			background-color: var(--color-base-items);
-			color: var(--color-grey-100);
-		}
-
-		.button-confirmation-outline {
-			background-color: var(--color-body-background);
-			color: var(--color-base-items);
+		.button-primary-outline {
+			background-color: var(--color-background);
+			color: var(--color-primary);
 			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-primary);
+				color: var(--color-white);
+			}
 		}
 
-		.button-cancel-fill {
-			background-color: var(--color-grey-600);
-			color: var(--color-grey-100);
+		/** Danger **/
+		.button-danger-fill {
+			background-color: var(--color-primary);
+			color: var(--color-white);
+			transition: 0.5s;
+
+			&:hover {
+				filter: brightness(0.8);
+			}
 		}
 
-		.button-cancel-outline {
-			background-color: var(--color-body-background);
-			color: var(--color-grey-700);
+		.button-danger-outline {
+			background-color: var(--color-background);
+			color: var(--color-danger);
 			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-danger);
+				color: var(--color-white);
+			}
+		}
+
+		/** Success **/
+		.button-success-fill {
+			background-color: var(--color-success);
+			color: var(--color-white);
+			transition: 0.5s;
+
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
+
+		.button-success-outline {
+			background-color: var(--color-background);
+			color: var(--color-success);
+			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-success);
+				color: var(--color-white);
+			}
+		}
+
+		/** Warning **/
+		.button-warning-fill {
+			background-color: var(--color-warning);
+			color: var(--color-dark);
+			transition: 0.5s;
+
+			&:hover {
+				filter: brightness(0.8);
+			}
+		}
+
+		.button-warning-outline {
+			background-color: var(--color-background);
+			color: var(--color-dark);
+			font-weight: 500;
+			transition: 0.5s;
+
+			&:hover {
+				background-color: var(--color-warning);
+				color: var(--color-dark);
+			}
 		}
 
 		input {

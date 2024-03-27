@@ -1,23 +1,5 @@
 <aside class="right-section">
-	<div class="nav">
-		<button id="menu-btn" (click)="openSidebar()">
-			<span class="material-icons-sharp">menu</span>
-		</button>
-		<div class="dark-mode" (click)="darkTheme()">
-			<span class="material-icons-sharp active">light_mode</span>
-			<span class="material-icons-sharp">dark_mode</span>
-		</div>
-
-		<div class="profile">
-			<div class="info">
-				<p>Olá, <b>Raylson</b></p>
-				<small class="text-muted">Admin</small>
-			</div>
-			<div class="profile-photo">
-				<span>RM</span>
-			</div>
-		</div>
-	</div>
+	<loto-navbar [isAppNavbar]="true" (activeSidebar)="activateSidebar($event)"></loto-navbar>
 
 	<div class="user-profile">
 		<div class="logo">
@@ -54,4 +36,7 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Opções para as funcionalidades na tela inicial de cada opção. Ex.: Bolão > Inicio (Opões que podem serm úteis dentro da tela inicial) -->
+	<!-- Opções para as funcionalidades de cada subitem das opçções Ex.: Bolão > Criar (opções que podem ser úteis dentro da criação) -->
 </aside>

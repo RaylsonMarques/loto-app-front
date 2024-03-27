@@ -1,11 +1,9 @@
 <div [formGroup]="form">
 	<div *ngIf="disabled; then other_content; else content"></div>
+
 	<ng-template #content>
-		<div class="w-100">
-			<mat-label>
-				{{ label }}
-				<sup *ngIf="required()" class="required-icon">*</sup>
-			</mat-label>
+		<mat-form-field class="form-field w-100 loto-input" appearance="outline">
+			<mat-label>{{ label }}</mat-label>
 			<input type="number" matInput [formControlName]="controlName" [value]="value" [maxlength]="maxlength" [required]="required()" />
 			<mat-error *ngIf="form.get(controlName).touched && form.get(controlName).invalid">
 				<span class="feedback danger" role="alert">
@@ -13,13 +11,14 @@
 					Preenchimento obrigatório
 				</span>
 			</mat-error>
-		</div>
+		</mat-form-field>
+
 	</ng-template>
 </div>
 
 <ng-template #other_content>
-	<div class="br-input">
+	<mat-form-field>
 		<mat-label>{{ label }}</mat-label>
-		<input matInput disabled [value]="value" />
-	</div>
+		<input matInput type="number" disabled [value]="value" />
+	</mat-form-field>
 </ng-template>
